@@ -35,14 +35,24 @@ class DoneXBlock(XBlock):
 
     @XBlock.json_handler
     def toggle_button(self, data, suffix=''):
-        self.done = data['done']
-        if data['done']:
-            grade = 1
-        else:
-            grade = 0
+        """
+        Ajax call when the button is clicked. Input is a JSON dictionary
+        with one boolean field: `done`. This will save this in the
+        XBlock field, and then issue an appropriate grade.
+        """
+        if 'done' in data:
+            self.done = data['done']
+            if data['done']:
+                grade = 1
+            else:
+                grade = 0
+            grade_event = {'value': grade, 'max_value': 1}
+            self.runtime.publish(self, 'grade', grade_event)
+            # This should move to self.runtime.publish, once that pipeline
+            # is finished for XBlocks.
+            tracker.emit("edx.done.toggle", {'done': self.done})        
 
-        self.runtime.publish(self, 'grade', {'value':grade, 'max_value': 1})
-        return {}
+        return {'state': self.done}
 
 
     def student_view(self, context=None):
