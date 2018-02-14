@@ -26,7 +26,7 @@
 
 .done_onoffswitch-label {
     display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #999999; border-radius: 10px;
+    border: 1px solid #000; border-radius: 5px;
 }
 
 .done_onoffswitch-inner {
@@ -39,20 +39,24 @@
 }
 
 .done_onoffswitch-inner:before, .done_onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    display: block; float: left; width: 50%; height: 40px; padding: 5px; line-height: 30px;
     font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
 .done_onoffswitch-inner:after {
     content: "Mark as complete";
-    padding-left: 40px;
-    background-color: rgb(0, 158, 231); color: #FFFFFF;
+    background-color: #666;
+    background-image: linear-gradient(rgb(125, 125, 125), rgb(75, 75, 75));
+    color: #fff;
+    text-align: center;
 }
 .done_onoffswitch-inner:before {
-    content: "Unmark";
-    padding-right: 100px;
-    background-color: #EEEEEE; color: #999999;
+    content: "Completed";
+    padding-right: 90px;
+    background-color: #696;
+    background-image: linear-gradient(rgb(100, 175, 125), rgb(50, 125, 75));
+    color: #fff;
     text-align: right;
 }
 
@@ -62,12 +66,11 @@
 }
 
 .done_onoffswitch-switch {
-    height: 18px;
-    display: block; width: 18px; margin: 6px 6px 6px 6px;
-    padding: -20px -20px -20px -20px;
+    height: 25px;
+    display: block; width: 25px; margin: 7px;
     background-position: center;
-    border: 2px solid #999999; border-radius: 20px;
-    position: absolute; top: 0; bottom: 0; right: 146px;
+    background-size: 25px 25px;
+    position: absolute; top: 0; bottom: 0; right: 138px;
     content: "X";
     text-color:black;
 }
@@ -77,7 +80,7 @@
 }
 
 .done_onoffswitch-checkbox:checked + .done_onoffswitch-label .done_onoffswitch-switch {
-    right: 0px; 
+    right: 5px;
 }
 
 .done-checked {

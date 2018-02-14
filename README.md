@@ -4,9 +4,7 @@ DoneXBlock
 Lets a student mark they've finished an activity. The student can
 click through two states of the XBlock, shown below:
 
-![Done screenshot](completionxblock_mark.png)
-
-![Done screenshot](completionxblock_undo.png)
+![Done screenshot](done_xblock.png)
 
 FutureLearn uses this kind of thing to great effect. Students can read
 text, watch videos, etc., and indicate when their done. This is
@@ -24,3 +22,5 @@ between MOOC providers is probably worth pursuing -- it'd be to the
 benefit of learners on all platforms, and ultimately, the industry as
 a whole if we had consistency of experience between platforms where
 convenient.
+
+This now includes some styling and wording tweaks from Stanford.
